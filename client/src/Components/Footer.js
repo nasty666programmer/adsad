@@ -1,13 +1,12 @@
 import React from 'react'
-import {Footers,ContainerContacts} from '../css/HomePage-footer';
+import {Footers} from '../css/HomePage-footer';
+import ContactUs from './ContactUs';
 
 export default function Footer() {
     return (
         <div>
             <Footers>
-                <ContainerContacts>
-                    <h1>Contacts</h1>
-                </ContainerContacts>
+                <ContactUs />
             </Footers>
         </div>
     )

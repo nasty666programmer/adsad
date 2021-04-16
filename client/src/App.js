@@ -1,10 +1,12 @@
 import IndexRouter from './Components/indexRouter'
-
+import {Main} from './css/HomePage-main';
 function App () {
     return (
-      <>
-        <IndexRouter/>
-        </>
+      <div>
+        <Main>
+          <IndexRouter/>
+        </Main>
+        </div>
     )
 }
 
