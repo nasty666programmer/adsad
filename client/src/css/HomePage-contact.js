@@ -8,23 +8,15 @@ flex-direction: column;
 align-items: center;
 padding: 0px 24px;
 width: 100%;
-// height: 220px;
-// text-align:center;
-
-/* Neutrals / 200 */
-
-// background: #F5F6F7;
-border-radius: 8px;
 `
 
 const NeedHelp = styled.span`
-/* Need help? */
 font-family: Sora;
 font-style: normal;
 font-weight: 600;
 font-size: 20px;
 line-height: 24px;
-/* identical to box height, or 120% */
+
 
 margin: 0 auto;
 letter-spacing: -0.1px;
