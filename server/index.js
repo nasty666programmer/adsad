@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
-const cryptoRandomString = require('crypto-random-string');
+const cryptoRandomString = require('crypto-random-string')
 
 const typeDefs = gql`
   
