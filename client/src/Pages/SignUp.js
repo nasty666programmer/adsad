@@ -6,6 +6,8 @@ import close from '../img/close.png';
 import axios from 'axios';
 import completeIcon from '../img/complete.png';
 import Verify from "./Verify";
+import { useQuery } from "@apollo/client";
+import { ADD_USERS } from "../GraphQL/Queries";
 
 function SignUp () {
 const [EmailData,setEmailDate] = useState({text:''});
@@ -13,6 +15,8 @@ const [openModal1,setOpenModal1] = useState(true);
 const [openModal2,setOpenModal2] = useState(false);
 const [openVerify,setOpenVerify] = useState(false);
 
+const {error,loading,data} = useQuery(ADD_USERS);
+console.log(data)
 
     const handleSubmit = (e) => {
         e.preventDefault();
