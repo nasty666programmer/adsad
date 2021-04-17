@@ -4,12 +4,13 @@ import {Main} from './css/HomePage-main';
 
 function App () {
     return (
-     
+
       <div>
         <Main>
           <IndexRouter/>
         </Main>
         </div>
+
     )
 }
 

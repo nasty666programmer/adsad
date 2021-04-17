@@ -3,11 +3,12 @@ import {BrowserRouter as Router,Link} from 'react-router-dom';
 import {Container, Wrapper,Title,labelForm,Input,Button, Box,Hepler,SuccessMessage} from '../css/HomePage-modal_changeEmail';
 import React,{useState} from 'react';
 import close from '../img/close.png';
-import axios from 'axios';
 import completeIcon from '../img/complete.png';
 import Verify from "./Verify";
-import { useQuery } from "@apollo/client";
-import { ADD_USERS } from "../GraphQL/Queries";
+import { useMutation, useQuery } from "@apollo/client";
+import { Get_Code } from "../GraphQL/Queries";
+import { EMAIL_CHANGE } from "../GraphQL/Mutation";;
+
 
 function SignUp () {
 const [EmailData,setEmailDate] = useState({text:''});
@@ -15,11 +16,17 @@ const [openModal1,setOpenModal1] = useState(true);
 const [openModal2,setOpenModal2] = useState(false);
 const [openVerify,setOpenVerify] = useState(false);
 
-const {error,loading,data} = useQuery(ADD_USERS);
-console.log(data)
+
+const [newEmail] = useMutation(EMAIL_CHANGE)
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        newEmail({
+          variables: {
+            email: EmailData.text
+          }
+        }).then(({data}) => console.log(data)).catch(err => console.log(err + 'error'));
+
         setEmailDate({text:''});
 
           setOpenModal1(!openModal1);

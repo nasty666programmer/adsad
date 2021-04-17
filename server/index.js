@@ -1,46 +1,50 @@
 const { ApolloServer, gql } = require('apollo-server');
-const {cryptoRandomString} = require('crypto-random-string')
+
+
+
 
 const typeDefs = gql`
-  
-  type User {
-            id:ID!,
-            mail:String!,
-            code:String!
-        }
-
+    type User {
+        id: ID!
+        email: String!
+        verifyCode: String!
+    }
+    input UserInput {
+        id: ID!
+        email: String!
+    }
     type Query {
-        getUser: [User!]
+        getUser: [User]!
         getCode: [User]!
     }
-
-  type Mutation {
-      changeMail(mail: String!): User!
-  }
+    type Mutation {
+        mailChange(email: String!): User!
+    }
 `
-
-const addUser = (mail) => {
-    const id = cryptoRandomString(5);
-    const code = cryptoRandomString(4);
-    return {
-        id,mail,code
-    } 
+const createUser = (email) => {
+ const id = Math.round(Math.random(10));
+ const verifyCode = 4321;
+ 
+ return {
+  id, email, verifyCode
+ }
+}
+const resolvers = {
+ Query: {
+  getUser: (user) => users,
+  getCode: (code) => users
+ },
+ Mutation: {
+  mailChange: (_, { email }, { dataSources }) => {
+    const user = createUser(email);
+    users = [];
+   users.push(user)
+      
+   return users[0]
+  }
+ }
 }
 
-
-
-const resolvers = {
-  Query: {
-    getUser: (user) => users,
-    getCode: (codeVerify) => users,
-  },
-  Mutation: {
-      changeMail: (_, {mail}, {dataSrc}) => {
-          console.log(dataSrc);
-
-      }
-  }
-};
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
