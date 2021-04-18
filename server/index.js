@@ -1,7 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server');
+const { uuid } = require('uuidv4');
 
-
-
+let codeCrypto = uuid().split('-');
 
 const typeDefs = gql`
     type User {
@@ -22,8 +22,10 @@ const typeDefs = gql`
     }
 `
 const createUser = (email) => {
- const id = Math.round(Math.random(10));
- const verifyCode = 4321;
+ const id = codeCrypto[0];
+ const verifyCode = codeCrypto[1];
+ console.log(verifyCode)
+ console.log(id)
  
  return {
   id, email, verifyCode

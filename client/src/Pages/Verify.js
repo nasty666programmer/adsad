@@ -1,4 +1,4 @@
-import {Container,VerifyBlock,InfoVerify,MailInfo,VerifyInputWrapper,ForgotEmail,VerifyInput} from '../css/HomePage-Verify';
+import {Container,VerifyBlock,InfoVerify,MailInfo,VerifyInputWrapper,ForgotEmail,VerifyInput,ButtonSubmit} from '../css/HomePage-Verify';
 import completeIcon from '../img/complete.png';
 import pen from '../img/pen.png';
 import {Get_Code} from '../GraphQL/Queries';
@@ -29,7 +29,8 @@ function Verify () {
         });
     }
 
-        const validData = () => {
+        const handleSubmit = (e) => {
+            e.preventDefault();
             let codeVal = Object.values(dataCode).join('');
             dataServer.filter(el => {
             if (el.verifyCode == codeVal) {
@@ -60,10 +61,13 @@ function Verify () {
                         <h2>Verify your account</h2>
                         <span>Please, enter the code here or follow the link from the email. Link expires <p>in 48 hours.</p></span>
                         <VerifyInput >
+                            <form onSubmit={handleSubmit}>
                             <input style={{'color':flagSuccess}} type='text' maxLength='1' name='code1' tabIndex='1' value={dataCode.code1} onChange={handleChange} />
                             <input style={{'color':flagSuccess}} type='text' maxLength='1' name='code2' tabIndex='2' value={dataCode.code2} onChange={handleChange}/>
                             <input style={{'color':flagSuccess}} type='text' maxLength='1' name='code3' tabIndex='3' value={dataCode.code3} onChange={handleChange}/>
                             <input style={{'color':flagSuccess}} type='text' maxLength='1' name='code4' tabIndex='4' value={dataCode.code4} onChange={handleChange}/>
+                           <ButtonSubmit> add</ButtonSubmit>
+                            </form>
                         </VerifyInput>
                     </VerifyInputWrapper>
                     <ForgotEmail>

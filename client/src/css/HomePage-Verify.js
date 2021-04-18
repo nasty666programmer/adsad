@@ -88,8 +88,8 @@ display:flex;
     border-right: none;
     outline:none;
     &:focus {
-
     }
+
 }
 `
 const VerifyInputWrapper = styled.div`
@@ -113,5 +113,8 @@ const ForgotEmail = styled.div`
         cursor: pointer;
     }
 `
+const ButtonSubmit = styled.button`
+    display:none;
+`
 
-export {Container,VerifyBlock,InfoVerify,MailInfo,VerifyInputWrapper,ForgotEmail,VerifyInput}
+export {Container,VerifyBlock,InfoVerify,MailInfo,VerifyInputWrapper,ForgotEmail,VerifyInput,ButtonSubmit}

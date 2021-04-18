@@ -1,12 +1,11 @@
 import Page from "../Components/Page";
 import {BrowserRouter as Router,Link} from 'react-router-dom';
-import {Container, Wrapper,Title,labelForm,Input,Button, Box,Hepler,SuccessMessage} from '../css/HomePage-modal_changeEmail';
+import {Container, Wrapper,Title,Input,Button, Box} from '../css/HomePage-modal_changeEmail';
 import React,{useState} from 'react';
 import close from '../img/close.png';
 import completeIcon from '../img/complete.png';
 import Verify from "./Verify";
-import { useMutation, useQuery } from "@apollo/client";
-import { Get_Code } from "../GraphQL/Queries";
+import { useMutation} from "@apollo/client";
 import { EMAIL_CHANGE } from "../GraphQL/Mutation";;
 
 
@@ -15,28 +14,37 @@ const [EmailData,setEmailDate] = useState({text:''});
 const [openModal1,setOpenModal1] = useState(true);
 const [openModal2,setOpenModal2] = useState(false);
 const [openVerify,setOpenVerify] = useState(false);
+const [errors,setErrors] = useState(false);
 
 
 const [newEmail] = useMutation(EMAIL_CHANGE)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        newEmail({
-          variables: {
-            email: EmailData.text
-          }
-        }).then(({data}) => console.log(data)).catch(err => console.log(err + 'error'));
+        let regExp = /\S+@\S+\.\S+/;
+        if (regExp.test(EmailData.text)) {
+            newEmail({
+              variables: {
+                email: EmailData.text
+              }
+            })
+            .then(({data}) => console.log(data))
+            .then(() => {
+              setEmailDate({text:''});
+              setOpenModal1(!openModal1);
+              setOpenModal2(!openModal2);
+            })
+            .catch(err => console.log(err + 'error'));
 
-        setEmailDate({text:''});
-
-          setOpenModal1(!openModal1);
-          setOpenModal2(!openModal2);
+            setTimeout(() => {
+              setOpenModal2(false);
+              setOpenVerify(!openVerify)
+            },1000)
+        } else {
+          setErrors(!errors)
+        } 
     
-          setTimeout(() => {
-            setOpenModal2(false);
-            setOpenVerify(!openVerify)
-          },1000)
-
+          
     }
 
     return (
@@ -47,7 +55,7 @@ const [newEmail] = useMutation(EMAIL_CHANGE)
                   <Link to='/'><img src={close} alt={'close modale window'} /></Link>
                     <Title>Change Email</Title>
                     <div>
-                    <labelForm>Enter new e-mail</labelForm>
+                    {errors ? <labelForm style={{'color':'red'}}>Please check you email again</labelForm> : <labelForm>Enter new e-mail</labelForm>}
                     <form onSubmit={handleSubmit}>
                         <Input>
                         <label htmlFor="email">new e-mail</label>
@@ -64,7 +72,7 @@ const [newEmail] = useMutation(EMAIL_CHANGE)
                   </Wrapper>
             </Container>
             }
-
+            
             {openModal2 && 
             <Container> 
                 <Wrapper>
