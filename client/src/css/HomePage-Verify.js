@@ -11,6 +11,7 @@ const Container = styled.div`
     background:inherit;
     border-radius: 8px;
     margin:0 auto;
+    top:4rem;
 `
 const VerifyBlock = styled.div`
     display: flex;
@@ -49,48 +50,48 @@ const InfoVerify = styled.div`
 `
 
 const MailInfo = styled.div`
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-h3 {
-    letter-spacing: -0.1px;
-    font-family: Sora;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    color: #252728;
-}
-
-span {
-    width: 24px;
-    height: 24px;
-    background: #E1E3E6;
-    border-radius: 50%;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-`
-const VerifyInput = styled.div`
-display:flex;
-  & input {
-      text-align:center;
-      font-size:2rem;
-    width: 48px;
-    height: 62px;
-    margin:5px;
-    border-bottom-color: gray; 
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline:none;
-    &:focus {
+    justify-content: center;
+    flex-direction: row;
+    h3 {
+        letter-spacing: -0.1px;
+        font-family: Sora;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #252728;
     }
 
-}
+    span {
+        width: 24px;
+        height: 24px;
+        background: #E1E3E6;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`
+const VerifyInput = styled.div`
+    display:flex;
+    & input {
+        text-align:center;
+        font-size:2rem;
+        width: 48px;
+        height: 62px;
+        margin:5px;
+        border-bottom-color: gray; 
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline:none;
+        &:focus {
+        }
+
+    }
 `
 const VerifyInputWrapper = styled.div`
     display: flex;
@@ -101,8 +102,8 @@ const VerifyInputWrapper = styled.div`
     background-color:#FFFFFF;
     width: 588px;
     height: 266px;
-span > p {
-    font-weight:bold;
+    span > p {
+        font-weight:bold;
 }
     
 `

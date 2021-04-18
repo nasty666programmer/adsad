@@ -19,63 +19,60 @@ const Container = styled.div`
     }
 `
 const Wrapper = styled.div`
-
-font-family: Sora;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 28px;
-
-
-letter-spacing: -0.3px;
-color: #252728;
-
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 0px 24px;
-width: 100%;
-div {
-  width: 100%;
-}
-h1 {
   font-family: Sora;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
+
   letter-spacing: -0.3px;
   color: #252728;
-}
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  width: 100%;
+  div {
+    width: 100%;
+  }
+  h1 {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.3px;
+    color: #252728;
+  }
 `
 
 const Title = styled.div`
-margin: 0 auto;
-letter-spacing: -0.1px;
+  margin: 0 auto;
+  letter-spacing: -0.1px;
 
-color: #252728;
+  color: #252728;
 
-text-align: center;
-order: 0;
-flex-grow: 0;
-margin: 24px 0px;
+  text-align: center;
+  order: 0;
+  flex-grow: 0;
+  margin: 24px 0px;
 `
 
 const labelForm = styled.div`
-width: 136px;
-height: 20px;
-left: 0px;
-top: 44px;
+  width: 136px;
+  height: 20px;
+  left: 0px;
+  top: 44px;
 
-font-family: Sora;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 20px;
-
-color: #252728;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #252728;
 `
 const Input = styled.div`
   width: 100%;
@@ -117,78 +114,73 @@ const Input = styled.div`
 `
 
 const Button = styled.button`
-display: flex;
-align-items: center;
-padding: 16px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
 
-width: 100%;
-height: 52px;
-left: 0px;
-top: 0px;
-text-align:center;
-background: #0A6629;
-border-radius: 8px;
-border: none;
-outline: none;
-color:#FFFFFF;
-justify-content:center;
+  width: 100%;
+  height: 52px;
+  left: 0px;
+  top: 0px;
+  text-align:center;
+  background: #0A6629;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color:#FFFFFF;
+  justify-content:center;
 `
 const Box = styled.div`
-font-family: Sora;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 28px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
 
 
-letter-spacing: -0.3px;
-color: #252728;
+  letter-spacing: -0.3px;
+  color: #252728;
 
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 0px 24px;
-div {
   width: 100%;
-  text-align: center;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  div {
+    width: 100%;
+    text-align: center;
+  }
 `
 
 const Hepler = styled.div`
-font-family: Sora;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 28px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.3px;
+  color: #252728;
 
-
-letter-spacing: -0.3px;
-color: #252728;
-
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 0px 24px;
-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 24px;
+  width: 100%;
 `
 
 const SuccessMessage = styled.div`
-font-family: Sora;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 28px;
-/* identical to box height, or 117% */
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  /* identical to box height, or 117% */
 
-letter-spacing: -0.3px;
-
-/* Neutrals / 800 */
-
-color: #252728;
+  letter-spacing: -0.3px;
+  color: #252728;
 
 `
 

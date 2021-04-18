@@ -11,8 +11,8 @@ import MailImg from '../img/MailImg.png';
 
 const infoBlock = [
     {img: ChatsImg, name: "Chat"},
-    {img: QuestionImg, name: "Mail"},
     {img: MailImg, name: "Mail"},
+    {img: QuestionImg, name: "Question"}
 ]
 
 
