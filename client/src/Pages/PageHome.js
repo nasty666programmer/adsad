@@ -3,9 +3,7 @@ import Page from '../Components/Page';
 
 function PageHome() {
   return (
-      <Page>
-        
-      </Page>
+      <Page></Page>
   );
 }
 
